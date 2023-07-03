@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import Main from "./components/Main/Main";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import FilteredProducts from "./components/FilteredProduct/FilteredProducts";
+import SingleProduct from "./components/FilteredProduct/SingleProduct";
+import { useSelector } from "react-redux";
+import LoginForm from "./components/Auth/LoginForm";
+import ScrollTop from "./ScrollTop";
 
-function App() {
+const App = () => {
+  const user = useSelector((state) => state.authSlice.user);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <ScrollTop />
+        <Routes>
+          <Route path="/" element={user.auth ? <Main /> : <LoginForm />} />
+          <Route path="/filteredProduct/:type" element={<FilteredProducts />} />
+          <Route
+            path="/filteredProduct/:type/:id"
+            element={<SingleProduct />}
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
