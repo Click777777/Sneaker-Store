@@ -13,6 +13,9 @@ Project Demo :
 ```
 https://sneaker-store-lilac.vercel.app/
 ```
+</ul><h2>Screenshots</h2>
+<p><img src="https://github.com/Click777777/Sneaker-Store/blob/master/src/assets/readmeImg/ss1.png" alt=""></p>
+<p><img src="https://github.com/Click777777/Sneaker-Store/blob/master/src/assets/readmeImg/ss2.png" alt=""></p>
 
 ## Getting Started
 
