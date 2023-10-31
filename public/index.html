@@ -12,9 +12,40 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Sneaker Store</title>
+
+    <style>
+      .loader-container {
+        background-color: #0a0909;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .loader {
+        width: 100px;
+        height: 100px;
+        animation: spin 2s linear infinite;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <!-- Loading Spinner Div -->
+    <div class="loader-container">
+      <div class="loader">
+        <img src="./logo.png" alt="loader logo" />
+      </div>
+    </div>
   </body>
 </html>
